@@ -26,3 +26,5 @@ npm start
 
 ## Următorul pas
 Înlocuiește produsele demonstrative din `src/data/products.ts` cu catalogul real al furnizorului/furnizorilor din Grecia (CSV, Excel, XML sau API). De asemenea, datele de contact și regulile reale de livrare trebuie configurate înainte de lansare.
+gustulegeei.ro
+test deployment
