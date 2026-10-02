@@ -1,10 +1,8 @@
-
 "use client";
 import {useState} from "react";
-import {ShoppingBag,Phone,Truck,ShieldCheck,HeartHandshake,MapPin,Check,ArrowRight} from "lucide-react";
+import {ShoppingBag,Truck,ShieldCheck,HeartHandshake,ArrowRight,ChevronRight} from "lucide-react";
 import Navbar from "@/components/Navbar";
 import {products} from "@/data/products";
-import {SITE} from "@/lib/constants";
 
 export default function Home(){
  const [cart,setCart]=useState<number[]>([]);
@@ -13,77 +11,52 @@ export default function Home(){
   <Navbar/>
   <main>
    <section className="hero">
-    <div className="container hero-grid">
-     <div>
-      <div className="eyebrow"><span className="dot"/> Gustul Greciei, la tine acasă</div>
-      <h1>Produse autentice <span>din Grecia.</span></h1>
-      <p>Descoperă gustul Mediteranei prin produse atent alese: ulei de măsline extravirgin, măsline, feta, miere, condimente și specialități grecești.</p>
-      <div className="hero-actions"><a href="#stoc" className="btn btn-primary">Descoperă produsele <ArrowRight size={17}/></a><a href="#livrare" className="btn btn-secondary">Cum livrăm</a></div>
-      <div className="badges"><span className="badge">🇬🇷 Selecție din Grecia</span><span className="badge">✓ Produse atent alese</span><span className="badge">🚚 Livrare rapidă</span></div>
-     </div>
-     <div className="hero-card">
-      <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1100&q=85" alt="Produse mediteraneene"/>
-      <div className="badges"><span className="badge">Ulei de măsline</span><span className="badge">Kalamata</span><span className="badge">Feta</span></div>
-     </div>
+    <div className="container hero-inner">
+      <div className="hero-copy">
+       <div className="eyebrow"><span className="dot"/> Gustul autentic al Greciei</div>
+       <h1>Grecia la tine <span>acasă.</span></h1>
+       <p>Produse grecești alese cu grijă: ulei de măsline, măsline Kalamata, feta, miere, condimente și specialități grecești.</p>
+       <div className="hero-actions"><a href="#produse" className="btn btn-primary">Vezi produsele <ArrowRight size={17}/></a><a href="#livrare" className="btn btn-secondary">Livrare în România</a></div>
+       <div className="hero-trust"><span><b>✓</b> Produse grecești</span><span><b>✓</b> Ambalare atentă</span><span><b>✓</b> Comandă simplă</span></div>
+      </div>
+      <div className="hero-visual"><img src="/hero-grecia.png" alt="Coș cu produse grecești, ulei de măsline, măsline și brânzeturi"/></div>
     </div>
    </section>
 
-   <section id="servicii" className="section">
-    <div className="container">
-     <div className="section-head"><div><div className="kicker">Servicii</div><h2>Mai simplu să alegi bine.</h2></div><p>Am păstrat structura clară a site-ului original, dar am transformat-o într-o experiență dedicată produselor grecești.</p></div>
-     <div className="features">
-      <div className="feature"><div className="icon">🇬🇷</div><h3>Selecție grecească</h3><p>Produse inspirate de gastronomia autentică a Greciei.</p></div>
-      <div className="feature"><div className="icon">🫒</div><h3>Ingrediente mediteraneene</h3><p>Uleiuri, măsline, condimente și specialități pentru masa de zi cu zi.</p></div>
-      <div className="feature"><div className="icon">📦</div><h3>Ambalare atentă</h3><p>Pregătim comenzile pentru transport în condiții bune.</p></div>
-      <div className="feature"><div className="icon">💬</div><h3>Comenzi ușoare</h3><p>Ne poți contacta rapid pentru produse, cantități sau disponibilitate.</p></div>
-     </div>
+   <section id="despre" className="section intro">
+    <div className="container intro-grid">
+      <div><div className="kicker">Bine ai venit</div><h2>Gustul Greciei, ales pentru masa ta.</h2></div>
+      <p>Descoperă produse inspirate din bucătăria grecească și din tradițiile grecești. Construim treptat un catalog de produse autentice, cu informații clare și comandă simplă.</p>
+    </div>
+    <div className="container features">
+      <div className="feature"><div className="icon">🫒</div><h3>Produse grecești</h3><p>Uleiuri, măsline, brânzeturi, miere și specialități.</p></div>
+      <div className="feature"><div className="icon">🇬🇷</div><h3>Inspirație din Grecia</h3><p>Selecții cu specific egeean și gust autentic.</p></div>
+      <div className="feature"><div className="icon">📦</div><h3>Ambalare atentă</h3><p>Pregătim produsele cu grijă pentru transport.</p></div>
+      <div className="feature"><div className="icon">💬</div><h3>Comandă ușoară</h3><p>Găsești produsele și informațiile esențiale rapid.</p></div>
     </div>
    </section>
 
-   <section id="stoc" className="section alt">
-    <div className="container">
-     <div className="section-head"><div><div className="kicker">Stoc</div><h2>Produse din Grecia</h2></div><p>O selecție de produse de pornire. Catalogul real poate fi înlocuit ulterior cu lista furnizorilor tăi din Grecia.</p></div>
+   <section id="categorii" className="section alt categories">
+    <div className="container"><div className="section-head"><div><div className="kicker">Categorii</div><h2>Arome pentru fiecare masă.</h2></div><p>O structură simplă, construită pentru un magazin alimentar grecesc.</p></div>
+     <div className="category-grid">{[["🫒","Ulei de măsline"],["🫙","Măsline"],["🧀","Brânzeturi"],["🍯","Miere"],["🌿","Condimente"],["🍰","Dulciuri & specialități"]].map(([icon,name])=><a href="#produse" className="category" key={name}><span>{icon}</span><div><strong>{name}</strong><small>Descoperă selecția</small></div><ChevronRight size={19}/></a>)}</div>
+    </div>
+   </section>
+
+   <section id="produse" className="section">
+    <div className="container"><div className="section-head"><div><div className="kicker">Produse</div><h2>Preferatele Greciei.</h2></div><p>Catalog demonstrativ pentru această versiune. Produsele reale pot fi importate ulterior din catalogul furnizorului.</p></div>
      <div className="products">{products.map(p=><article className="product" key={p.id}><img className="product-img" src={p.image} alt={p.name}/><div className="product-body"><div className="product-cat">{p.category}</div><h3>{p.name}</h3><p>{p.description}</p><div className="price">{p.price}</div><button className="product-btn" onClick={()=>add(p.id)}>Adaugă în coș</button></div></article>)}</div>
     </div>
    </section>
 
-   <section id="buy-back" className="section">
-    <div className="container split">
-      <div><div className="kicker">Buy-Back</div><h2>Un concept nou, adaptat brandului.</h2><p style={{color:"#64748b",lineHeight:1.7,fontSize:17}}>Păstrăm secțiunea din meniul original și o transformăm într-un program de preluare/recumpărare pentru clienții business și partenerii care doresc să lucreze cu noi.</p><div className="list"><div><span className="check">✓</span><span>Evaluare și discuție individuală</span></div><div><span className="check">✓</span><span>Parteneriate pentru magazine și HoReCa</span></div><div><span className="check">✓</span><span>Comenzi recurente pentru produse grecești</span></div></div></div>
-      <div className="info-card"><h3>Gustul Greciei, fără drum până în Grecia.</h3><p>Construim un catalog simplu, modern și ușor de comandat, pornind de la furnizori și produse reale.</p><a className="btn" style={{background:"#fff",color:"var(--blue)",border:0,marginTop:14}} href={`https://wa.me/${SITE.phoneRaw}`}>Vorbește cu noi</a></div>
-    </div>
-   </section>
+   <section id="comanda" className="section order-section"><div className="container split"><div><div className="kicker">Comandă</div><h2>Tu alegi. Noi pregătim.</h2><p>Comanda este gândită să fie simplă: alegi produsele, le adaugi în coș și apoi stabilim detaliile de livrare. În versiunea finală putem conecta plata online și procesarea automată a comenzilor.</p><a className="btn btn-primary" href="#produse">Începe cumpărăturile <ArrowRight size={17}/></a></div><div className="info-card"><h3>Ai nevoie de un produs anume?</h3><p>Trimite-ne denumirea sau fotografia produsului și îl putem adăuga în catalog când avem disponibilitatea furnizorului.</p></div></div></section>
 
-   <section id="masini-la-comanda" className="section alt">
-    <div className="container split">
-      <div className="info-card"><h3>Comandă produse</h3><p>Nu găsești produsul dorit? Trimite-ne denumirea, fotografia sau marca și verificăm disponibilitatea.</p><a className="btn" style={{background:"#fff",color:"var(--blue)",border:0,marginTop:14}} href={`https://wa.me/${SITE.phoneRaw}`}>Solicită un produs</a></div>
-      <div><div className="kicker">Comandă</div><h2>Din Grecia, la cererea ta.</h2><p style={{color:"#64748b",lineHeight:1.7,fontSize:17}}>Această secțiune păstrează locul din meniul original pentru comenzile speciale. Putem integra ulterior importul automat al catalogului unui furnizor.</p></div>
-    </div>
-   </section>
+   <section id="livrare" className="section alt"><div className="container"><div className="section-head"><div><div className="kicker">Livrare</div><h2>Din Grecia, până la ușa ta.</h2></div><p>Detaliile finale de transport vor fi configurate după stabilirea curierului și a regulilor de livrare.</p></div><div className="features"><div className="feature"><Truck className="icon" color="var(--blue)"/><h3>Livrare la adresă</h3><p>Comenzile sunt pregătite pentru expediere către adresa indicată.</p></div><div className="feature"><ShieldCheck className="icon" color="var(--green)"/><h3>Ambalare sigură</h3><p>Produsele sunt pregătite cu atenție pentru transport.</p></div><div className="feature"><HeartHandshake className="icon" color="var(--blue)"/><h3>Suport</h3><p>Te ajutăm cu disponibilitatea și detaliile comenzilor.</p></div></div></div></section>
 
-   <section id="livrare" className="section">
-    <div className="container">
-     <div className="section-head"><div><div className="kicker">Livrare</div><h2>Comanda ta, pregătită cu grijă.</h2></div><p>Livrarea, tarifele și zonele pot fi configurate după regulile reale ale magazinului.</p></div>
-     <div className="features">
-      <div className="feature"><Truck className="icon" color="var(--blue)"/><h3>Livrare la adresă</h3><p>Expediem comenzile către adresa indicată la plasarea comenzii.</p></div>
-      <div className="feature"><ShieldCheck className="icon" color="var(--green)"/><h3>Ambalare sigură</h3><p>Produsele sunt pregătite pentru transport cu atenție la protecție.</p></div>
-      <div className="feature"><MapPin className="icon" color="var(--blue)"/><h3>România</h3><p>Configurăm livrarea în funcție de județ, localitate și greutatea coletului.</p></div>
-      <div className="feature"><HeartHandshake className="icon" color="var(--green)"/><h3>Suport</h3><p>Îți răspundem pentru disponibilitate, comenzi și întrebări despre produse.</p></div>
-     </div>
-    </div>
-   </section>
+   <section id="promotii" className="section promo"><div className="container promo-box"><div><div className="kicker">Promoții</div><h2>Descoperă gusturi noi.</h2><p>Zona este pregătită pentru oferte, pachete și produse sezoniere atunci când catalogul real este disponibil.</p></div><a className="btn btn-secondary" href="#produse">Vezi produsele</a></div></section>
 
-   <section id="rate" className="section alt">
-    <div className="container split"><div><div className="kicker">Rate</div><h2>Rămâne în meniu, dar îl facem util.</h2><p style={{color:"#64748b",lineHeight:1.7,fontSize:17}}>Secțiunea „Rate” poate deveni o zonă pentru abonamente, comenzi recurente pentru firme sau plata în tranșe, în funcție de modelul comercial ales.</p></div><div className="info-card"><h3>Comenzi recurente</h3><p>Potrivit pentru restaurante, pensiuni, magazine și clienți care cumpără regulat produse grecești.</p><div className="list"><div><span className="check">✓</span><span>Livrare periodică</span></div><div><span className="check">✓</span><span>Liste de produse personalizate</span></div></div></div></div>
-   </section>
-
-   <section id="recenzii" className="section">
-    <div className="container"><div className="section-head"><div><div className="kicker">Recenzii</div><h2>Primele păreri pot veni aici.</h2></div><p>Zona este pregătită pentru recenziile reale ale clienților după lansare.</p></div>
-    <div className="reviews"><div className="review"><div className="stars">★★★★★</div><p>„Uleiul de măsline a fost foarte aromat și livrarea rapidă.”</p><strong>Client verificat</strong></div><div className="review"><div className="stars">★★★★★</div><p>„Măslinele Kalamata sunt exact genul de produs pe care îl căutam.”</p><strong>Client verificat</strong></div><div className="review"><div className="stars">★★★★★</div><p>„Site simplu, produse interesante și comunicare foarte bună.”</p><strong>Client verificat</strong></div></div></div>
-   </section>
+   <section id="recenzii" className="section"><div className="container"><div className="section-head"><div><div className="kicker">Recenzii</div><h2>Părerea clienților contează.</h2></div><p>După lansare, aici vor putea fi afișate recenziile reale ale clienților.</p></div><div className="reviews"><div className="review"><div className="stars">★★★★★</div><p>„Uleiul de măsline a fost foarte aromat și livrarea rapidă.”</p><strong>Client verificat</strong></div><div className="review"><div className="stars">★★★★★</div><p>„Măslinele Kalamata sunt exact genul de produs pe care îl căutam.”</p><strong>Client verificat</strong></div><div className="review"><div className="stars">★★★★★</div><p>„Site simplu, produse interesante și comunicare foarte bună.”</p><strong>Client verificat</strong></div></div></div></section>
   </main>
-
-  <footer className="footer"><div className="container"><div className="footer-grid"><div><h3>gustulegeei.ro</h3><p>Produse autentice din Grecia. Ulei de măsline, măsline, feta, miere și specialități mediteraneene.</p></div><div><h3>Contact</h3><p><a href={`tel:${SITE.phoneRaw}`}>{SITE.phone}</a><br/><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p></div><div><h3>Navigare</h3><p><a href="#stoc">Produse</a><br/><a href="#livrare">Livrare</a><br/><a href="#recenzii">Recenzii</a></p></div></div><div className="footer-bottom">© 2026 gustulegeei.ro · Toate drepturile rezervate.</div></div></footer>
+  <footer className="footer"><div className="container"><div className="footer-grid"><div><img src="/logo.png" alt="gustulegeei.ro" className="footer-logo"/><p>Gustul autentic al Greciei, cu produse pentru masa de zi cu zi.</p></div><div><h3>Navigare</h3><p><a href="#produse">Produse</a><br/><a href="#categorii">Categorii</a><br/><a href="#livrare">Livrare</a></p></div><div><h3>gustulegeei.ro</h3><p>Produse grecești<br/>Selecție grecească<br/>Comenzi și informații</p></div></div><div className="footer-bottom">© 2026 gustulegeei.ro · Toate drepturile rezervate.</div></div></footer>
   <button className="cart" aria-label="Coș"><ShoppingBag/><span className="cart-count">{cart.length}</span></button>
  </>
 }

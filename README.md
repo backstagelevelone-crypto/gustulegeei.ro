@@ -1,5 +1,7 @@
 # gustulegeei.ro
 
+Versiunea 2: homepage adaptat complet pentru magazin alimentar grecesc, cu hero egeean si cos cu produse.
+
 Versiune refăcută pornind de la structura proiectului COSRAM Auto, transformată într-un magazin de produse grecești.
 
 ## Conținut
@@ -26,5 +28,3 @@ npm start
 
 ## Următorul pas
 Înlocuiește produsele demonstrative din `src/data/products.ts` cu catalogul real al furnizorului/furnizorilor din Grecia (CSV, Excel, XML sau API). De asemenea, datele de contact și regulile reale de livrare trebuie configurate înainte de lansare.
-gustulegeei.ro
-test deployment

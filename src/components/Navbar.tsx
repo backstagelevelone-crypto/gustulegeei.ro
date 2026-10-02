@@ -1,4 +1,3 @@
-
 "use client";
 import {useState} from "react";
 import {Menu,X,ShoppingBag} from "lucide-react";
@@ -9,9 +8,9 @@ export default function Navbar(){
   <div className="container nav-inner">
    <a href="/" className="brand"><img src="/logo.png" alt="gustulegeei.ro"/><span className="brand-text">gustulegeei<span>.ro</span></span></a>
    <nav className="navlinks">{NAV_LINKS.map(x=><a key={x.href} href={x.href}>{x.label}</a>)}</nav>
-   <a className="cta" href="#stoc">Vezi produsele</a>
+   <a className="cta" href="#produse"><ShoppingBag size={17}/> Vezi produsele</a>
    <button className="menu-btn" onClick={()=>setOpen(!open)} aria-label="Meniu">{open?<X/>:<Menu/>}</button>
   </div>
-  <div className={"mobile-nav "+(open?"open":"")}>{NAV_LINKS.map(x=><a key={x.href} href={x.href} onClick={()=>setOpen(false)}>{x.label}</a>)}<a className="cta" href="#stoc" onClick={()=>setOpen(false)}>Vezi produsele</a></div>
+  <div className={"mobile-nav "+(open?"open":"")}>{NAV_LINKS.map(x=><a key={x.href} href={x.href} onClick={()=>setOpen(false)}>{x.label}</a>)}<a className="cta" href="#produse" onClick={()=>setOpen(false)}>Vezi produsele</a></div>
  </header>
 }
