@@ -14,8 +14,8 @@ export default function Home(){
     <div className="container hero-inner">
       <div className="hero-copy">
        <div className="eyebrow"><span className="dot"/> Gustul autentic al Greciei</div>
-       <h1>Grecia la tine <span>acasă.</span></h1>
-       <p>Produse grecești alese cu grijă: ulei de măsline, măsline Kalamata, feta, miere, condimente și specialități grecești.</p>
+       <h1>Gustul Egeei <span>la tine acasă.</span></h1>
+       <p>Produse grecești alese cu grijă: ulei de măsline, măsline Kalamata, feta, miere, condimente și specialități din Grecia.</p>
        <div className="hero-actions"><a href="#produse" className="btn btn-primary">Vezi produsele <ArrowRight size={17}/></a><a href="#livrare" className="btn btn-secondary">Livrare în România</a></div>
        <div className="hero-trust"><span><b>✓</b> Produse grecești</span><span><b>✓</b> Ambalare atentă</span><span><b>✓</b> Comandă simplă</span></div>
       </div>
@@ -56,7 +56,21 @@ export default function Home(){
 
    <section id="recenzii" className="section"><div className="container"><div className="section-head"><div><div className="kicker">Recenzii</div><h2>Părerea clienților contează.</h2></div><p>După lansare, aici vor putea fi afișate recenziile reale ale clienților.</p></div><div className="reviews"><div className="review"><div className="stars">★★★★★</div><p>„Uleiul de măsline a fost foarte aromat și livrarea rapidă.”</p><strong>Client verificat</strong></div><div className="review"><div className="stars">★★★★★</div><p>„Măslinele Kalamata sunt exact genul de produs pe care îl căutam.”</p><strong>Client verificat</strong></div><div className="review"><div className="stars">★★★★★</div><p>„Site simplu, produse interesante și comunicare foarte bună.”</p><strong>Client verificat</strong></div></div></div></section>
   </main>
-  <footer className="footer"><div className="container"><div className="footer-grid"><div><img src="/logo.png" alt="gustulegeei.ro" className="footer-logo"/><p>Gustul autentic al Greciei, cu produse pentru masa de zi cu zi.</p></div><div><h3>Navigare</h3><p><a href="#produse">Produse</a><br/><a href="#categorii">Categorii</a><br/><a href="#livrare">Livrare</a></p></div><div><h3>gustulegeei.ro</h3><p>Produse grecești<br/>Selecție grecească<br/>Comenzi și informații</p></div></div><div className="footer-bottom">© 2026 gustulegeei.ro · Toate drepturile rezervate.</div></div></footer>
+  <footer className="footer"><div className="container"><div className="footer-grid">
+  <div><img src="/logo.png" alt="gustulegeei.ro" className="footer-logo"/><p>Gustul Greciei și al Egeei, cu produse pentru masa de zi cu zi.</p></div>
+  <div><h3>Magazin</h3><p><a href="#produse">Produse</a><br/><a href="#categorii">Categorii</a><br/><a href="#livrare">Livrare și plată</a><br/><a href="#comanda">Comandă</a></p></div>
+  <div><h3>Informații</h3><p>
+    <a href="/despre-noi">Despre noi</a><br/>
+    <a href="/contact">Contact</a><br/>
+    <a href="/termeni-si-conditii">Termeni și condiții</a><br/>
+    <a href="/retragere-si-retur">Retragere și retur</a><br/>
+    <a href="/politica-de-confidentialitate">Politica de confidențialitate</a><br/>
+    <a href="/politica-cookies">Politica de cookies</a><br/>
+    <a href="/anpc-si-sal">ANPC / soluționarea litigiilor</a>
+  </p></div>
+</div>
+<div className="footer-bottom">© 2026 gustulegeei.ro · Toate drepturile rezervate. · <a href="/livrare-si-plata">Livrare și plată</a> · <a href="/politica-cookies">Cookies</a></div>
+</div></footer>
   <button className="cart" aria-label="Coș"><ShoppingBag/><span className="cart-count">{cart.length}</span></button>
  </>
 }

@@ -6,7 +6,7 @@ export default function Navbar(){
  const [open,setOpen]=useState(false);
  return <header className="nav">
   <div className="container nav-inner">
-   <a href="/" className="brand"><img src="/logo.png" alt="gustulegeei.ro"/><span className="brand-text">gustulegeei<span>.ro</span></span></a>
+   <a href="/" className="brand"><img src="/logo.png" alt="gustulegeei.ro"/></a>
    <nav className="navlinks">{NAV_LINKS.map(x=><a key={x.href} href={x.href}>{x.label}</a>)}</nav>
    <a className="cta" href="#produse"><ShoppingBag size={17}/> Vezi produsele</a>
    <button className="menu-btn" onClick={()=>setOpen(!open)} aria-label="Meniu">{open?<X/>:<Menu/>}</button>
