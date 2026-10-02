@@ -2,7 +2,7 @@
 
 Versiunea 2: homepage adaptat complet pentru magazin alimentar grecesc, cu hero egeean si cos cu produse.
 
-Versiune refăcută pornind de la structura proiectului COSRAM Auto, transformată într-un magazin de produse grecești.
+Versiune refăcută pornind de la structura proiectului gustul, transformată într-un magazin de produse grecești.
 
 ## Conținut
 - identitate gustulegeei.ro
