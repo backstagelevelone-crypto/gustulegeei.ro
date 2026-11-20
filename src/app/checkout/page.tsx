@@ -2,7 +2,7 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 import Link from "next/link";
-import { ArrowLeft, CreditCard } from "lucide-react";
+import { ArrowLeft, CreditCard, PackageCheck } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { useProductCatalog } from "@/lib/useProductCatalog";
 import { useCart } from "@/context/CartContext";
